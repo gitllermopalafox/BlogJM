@@ -1,0 +1,20 @@
+{
+    "name": "machaen/blog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "programacion3",
+            "email": "programacion3@axovia.mx"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "dimsav/laravel-translatable" : "5.4",
+        "mcamara/laravel-localization": "1.0.*"
+    },
+    "autoload": {
+        "classmap": [
+            "app/Http/Kernel.php"
+        ]
+    }
+}
