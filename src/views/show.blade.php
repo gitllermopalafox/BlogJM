@@ -43,7 +43,7 @@
         </div>
         <div class="fb-comments" data-href="{{ URL::route('blog.show', [ 'slug' => $post->slug ]) }}" data-numposts="5"></div>
       </section>
-      @include('packages::filtros', [ 'with_notes' => true, 'years' => $years, 'last_post' => $post->created_at ])
+      @include('blog::filtros', [ 'with_notes' => true, 'years' => $years, 'last_post' => $post->created_at ])
     </div>
   </div>
 @endsection
