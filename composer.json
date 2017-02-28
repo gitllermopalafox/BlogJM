@@ -16,5 +16,9 @@
         "illuminate/html": "5.*",
         "fzaninotto/faker": "^1.5"
     },
-    "autoload": {}
+    "autoload": {
+        "psr-4": {
+            "Machaen\\Blog\\": "packages/Machaen/Blog/src"
+        }
+    }
 }
