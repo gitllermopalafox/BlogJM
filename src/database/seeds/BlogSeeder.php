@@ -55,8 +55,8 @@ class BlogSeeder extends Seeder {
                 'slug'          => $faker->slug(),
                 'descripcion'   => $faker->sentence($nbWords = 30, $variableNbWords = true),
                 'previo'        => $faker->sentence($nbWords = 10, $variableNbWords = true),
-                'image_banner'  => 'blog-vista.png',
-                'locale'        => '/uploads/blog/en',
+                'image_banner'  => '/uploads/blog/blog-vista.png',
+                'locale'        => 'en',
                 'created_at' => $faker->dateTimeBetween(    $startDate = '-9 month', 
                                                             $endDate = 'now', 
                                                             $timezone = date_default_timezone_get()
