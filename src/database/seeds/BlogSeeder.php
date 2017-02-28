@@ -36,7 +36,7 @@ class BlogSeeder extends Seeder {
                 'slug'          => $faker->slug(),
                 'descripcion'   => $faker->sentence($nbWords = 30, $variableNbWords = true),
                 'previo'        => $faker->sentence($nbWords = 10, $variableNbWords = true),
-                'image_banner'  => 'blog-vista.png',
+                'image_banner'  => '/uploads/blog/blog-vista.png',
                 'locale'        => 'es',
                 'created_at' => $faker->dateTimeBetween(    $startDate = '-9 month', 
                                                             $endDate = 'now', 
@@ -56,7 +56,7 @@ class BlogSeeder extends Seeder {
                 'descripcion'   => $faker->sentence($nbWords = 30, $variableNbWords = true),
                 'previo'        => $faker->sentence($nbWords = 10, $variableNbWords = true),
                 'image_banner'  => 'blog-vista.png',
-                'locale'        => 'en',
+                'locale'        => '/uploads/blog/en',
                 'created_at' => $faker->dateTimeBetween(    $startDate = '-9 month', 
                                                             $endDate = 'now', 
                                                             $timezone = date_default_timezone_get()
