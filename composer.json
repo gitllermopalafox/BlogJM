@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Machaen\\Blog\\": "packages/Machaen/Blog/src"
+            "Machaen\\Blog\\": "src/"
         }
     }
 }
