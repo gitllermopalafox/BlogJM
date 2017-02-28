@@ -38,7 +38,7 @@ a:hover {
 .blog-container .search-container div {
   text-align: left;
   margin-top: 15px;
-  background: url("../images/icon-search.png") no-repeat 8px center;
+  background: url("../images/blog/icon-search.png") no-repeat 8px center;
   border: 1px solid #808080;
   padding: 5px 5px 5px 40px;
 }
@@ -189,11 +189,11 @@ a:hover {
 }
 .blog-container .blog-items .paginator .pagination li:first-child a,
 .blog-container .preview-blog .paginator .pagination li:first-child a {
-  background: url("../images/prev-icon.png") no-repeat center #fc3;
+  background: url("../images/blog/prev-icon.png") no-repeat center #fc3;
 }
 .blog-container .blog-items .paginator .pagination li:last-child a,
 .blog-container .preview-blog .paginator .pagination li:last-child a {
-  background: url("../images/next-icon.png") no-repeat center #fc3;
+  background: url("../images/blog/next-icon.png") no-repeat center #fc3;
 }
 .blog-container .blog-items .paginator .pagination li.active,
 .blog-container .preview-blog .paginator .pagination li.active {
@@ -297,7 +297,7 @@ a:hover {
 }
 .blog-container .blog-filters > div h2 {
   margin: 0px;
-  font-family: 'Costa';
+  font-family: ''Source Sans Pro', sans-serif;';
   font-size: 30px;
   height: 45px;
   display: inline-block;
@@ -352,7 +352,7 @@ a:hover {
 }
 .blog-container .blog-filters > div.filter-notes h2 {
   margin: 0px;
-  font-family: 'Costa';
+  font-family: ''Source Sans Pro', sans-serif;';
   font-size: 20px;
   font-weight: 300;
   height: 45px;
@@ -401,11 +401,11 @@ a:hover {
 }
 .blog-container .blog-filters > div.filter-date .year-panel h4 a span.to-show,
 .blog-container .blog-filters > div.filter-date .month-panel h4 a span.to-show {
-  background: url("../images/year-show.png") no-repeat center;
+  background: url("../images/blog/year-show.png") no-repeat center;
 }
 .blog-container .blog-filters > div.filter-date .year-panel h4 a span.to-hide,
 .blog-container .blog-filters > div.filter-date .month-panel h4 a span.to-hide {
-  background: url("../images/year-hide.png") no-repeat center;
+  background: url("../images/blog/year-hide.png") no-repeat center;
 }
 .blog-container .blog-filters > div.filter-date .month-panel {
   background: #f2f2f4;
