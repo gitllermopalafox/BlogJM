@@ -19,10 +19,8 @@ class PackageServiceProvider extends ServiceProvider {
 		$this->publishes([ __DIR__.'/database/seeds' => base_path('database/seeds')]);
 		$this->publishes([ __DIR__.'/public/css' => base_path('public/css')]);
 		$this->publishes([ __DIR__.'/public/js' => base_path('public/js')]);
-		mkdir(base_path('public/styl'), 0700);
-		mkdir(base_path('public/images'), 0700);
-		$this->publishes([ __DIR__.'/resources/assets/styl' => base_path('public/styl')]);
-		$this->publishes([ __DIR__.'/public/images/blog' => base_path('public/image')]);
+		$this->publishes([ __DIR__.'/public/styl' => base_path('resources/assets/styl')]);
+		$this->publishes([ __DIR__.'/public/images/blog' => base_path('public/images')]);
 	}
 
 	/**
