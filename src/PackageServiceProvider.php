@@ -13,7 +13,7 @@ class PackageServiceProvider extends ServiceProvider {
 	{
 		require __DIR__ . '/../vendor/autoload.php';
 
-		$this->loadViewsFrom(__DIR__.'/views', 'packages');
+		$this->loadViewsFrom(__DIR__.'/views', 'blog');
 		$this->publishes([ __DIR__.'/views' => base_path('resources/views/machaen/blog')]);
 		$this->publishes([ __DIR__.'/database/migrations' => base_path('database/migrations')]);
 		$this->publishes([ __DIR__.'/database/seeds' => base_path('database/seeds')]);

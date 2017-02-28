@@ -39,7 +39,7 @@ class BlogController extends Controller {
 		$tags 			= Blog::getTags();
 		$years			= Helpers::getYearsPost();
 
-		return view('packages::index', [	'posts' 		=> $posts, 
+		return view('blog::index', [	'posts' 		=> $posts, 
 											'tags' 			=> $tags,
 											'years'			=> $years 
 											]);
@@ -57,7 +57,7 @@ class BlogController extends Controller {
 			abort('404');
 		}
 
-		return view('packages::show', [	'post' 			=> $post, 
+		return view('blog::show', [	'post' 			=> $post, 
 										'tags' 			=> $tags, 
 										'post_recent' 	=> $post_recent, 
 										'post_relation' => $post_relation,
