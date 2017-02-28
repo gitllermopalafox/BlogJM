@@ -25,7 +25,6 @@ class PackageServiceProvider extends ServiceProvider {
 		$this->publishes([ __DIR__.'/config/translatable.php' => base_path('config')]);
 		$this->publishes([ __DIR__.'/lang/en/blog.php' => base_path('resources/lang/en/')]);
 		$this->publishes([ __DIR__.'/lang/es/blog.php' => base_path('resources/lang/es/')]);
-		$this->publishes([ __DIR__.'/Helpers.php' => base_path('app')]);
 	}
 
 	/**
