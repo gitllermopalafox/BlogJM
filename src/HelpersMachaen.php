@@ -14,9 +14,10 @@ use Input;
 use Auth;
 use Carbon;
 use Session;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
-class Helpers{
+class HelpersMachaen{
     
     
     public static function dateString($date)
@@ -88,7 +89,7 @@ class Helpers{
     }
     public static function getMonthString($month)
     {
-        if ('es' == "en")
+        if (LaravelLocalization::getCurrentLocale() == "en")
         {
             $months  = array(   1 => 'January', 
                 2   => 'February',
@@ -154,7 +155,7 @@ class Helpers{
 
         $query = Blog::select(['blog_translations.titulo', 'blog_translations.slug'])
                     ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                    ->where('blog_translations.locale',  'es')
+                    ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                     ->whereBetween('blog.created_at', [$date_min, $date_max]);
 
         return $query->get();
@@ -164,7 +165,7 @@ class Helpers{
 
         $query = Blog::select(['blog_translations.titulo', 'blog_translations.slug', 'blog_translations.slug', 'blog.created_at'])
                     ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                    ->where('blog_translations.locale',  'es')
+                    ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                     ->where('blog.created_at', '<', $post->created_at)
                     ->orderBy('blog.created_at', 'DESC');
 
@@ -178,7 +179,7 @@ class Helpers{
                                 'blog_translations.slug', 
                                 'blog.created_at' ])
                     ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                    ->where('blog_translations.locale',  'es')
+                    ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                     ->where('blog.created_at', '>', $post->created_at)
                     ->orderBy('blog.created_at', 'ASC');
 
@@ -212,7 +213,7 @@ class Helpers{
         if (true){
             $locale = 'en';
         }else{
-            $locale = 'es';
+            $locale = LaravelLocalization::getCurrentLocale();
         }
         $query = Blog::select([ 'blog_translations.titulo', 
                                 'blog_translations.slug', 
@@ -222,7 +223,7 @@ class Helpers{
                     ->where('blog_translations.blog_id',  $id)
                     ->where('blog_translations.locale',  $locale)
                     ->first()->slug;
-        if ($locale == 'es'){
+        if ($locale == LaravelLocalization::getCurrentLocale()){
             return '/es/blog/mostrar/'.$query;
         }else{
             return '/en/blog/show/'.$query;

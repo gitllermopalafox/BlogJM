@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Input;
-//use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class Blog extends Model {
 
@@ -28,7 +28,7 @@ class Blog extends Model {
 
         $query->select([ 'blog_translations.titulo', 'blog_translations.descripcion','blog_translations.slug', 'blog.created_at', 'blog_translations.image_banner', 'blog_translations.previo' ])
                         ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                        ->where('blog_translations.locale', 'es')
+                        ->where('blog_translations.locale', LaravelLocalization::getCurrentLocale())
                         ->orderBy('blog.created_at', 'DESC');
 
         $query->where(function($query){
@@ -52,7 +52,7 @@ class Blog extends Model {
 
         $query->select([ 'blog_translations.titulo', 'blog_translations.descripcion','blog_translations.slug','blog_translations.previo', 'blog.created_at', 'blog.id', 'blog_translations.image_banner' ])
                         ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                        ->where('blog_translations.locale',  'es')
+                        ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                         ->where('blog_translations.slug', $slug);
 
         return $query->first();
@@ -65,7 +65,7 @@ class Blog extends Model {
                         ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog_has_tag.blog_id')
                         ->leftjoin('tag', 'tag.id', '=', 'blog_has_tag.tag_id')
                         ->leftjoin('tag_translations', 'tag_translations.tag_id', '=', 'tag.id')
-                        ->where('tag_translations.locale',  'es')
+                        ->where('tag_translations.locale',  LaravelLocalization::getCurrentLocale())
                         ->groupBy('tag.id')
                         ->orderBy('tag_translations.nombre');
 
@@ -77,7 +77,7 @@ class Blog extends Model {
 
         $query->select([ '*' ])
                         ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                        ->where('blog_translations.locale',  'es')
+                        ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                         ->orderBy('blog.created_at', 'DESC' );
 
         return $query->take($num_post)->get();
@@ -87,7 +87,7 @@ class Blog extends Model {
 
         $query->select([ 'blog_translations.titulo', 'blog_translations.slug' ])
                         ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                        ->where('blog_translations.locale',  'es')
+                        ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                         ->orderBy('blog.created_at', 'DESC' );
 
         return $query->take($num_post)->get();
@@ -96,7 +96,7 @@ class Blog extends Model {
     public function scopeGetLastThree($query, $skip){
         $query->select([ 'blog_translations.titulo', 'blog_translations.slug', 'blog_translations.descripcion', 'blog_translations.previo', 'blog_translations.image_banner' ])
                         ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                        ->where('blog_translations.locale',  'es')
+                        ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                         ->orderBy('blog.created_at', 'DESC' );
 
         return $query->skip($skip)->first();
@@ -105,7 +105,7 @@ class Blog extends Model {
     public function scopeGetByLote($query, $num, $skip){
         $query->select([ 'blog_translations.titulo', 'blog_translations.slug', 'blog_translations.descripcion', 'blog_translations.image_banner' ])
                         ->leftjoin('blog_translations', 'blog_translations.blog_id', '=', 'blog.id')
-                        ->where('blog_translations.locale',  'es')
+                        ->where('blog_translations.locale',  LaravelLocalization::getCurrentLocale())
                         ->orderBy('blog.created_at', 'DESC' );
 
         return $query->skip($skip)->take($num)->get();
