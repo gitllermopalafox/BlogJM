@@ -37,7 +37,7 @@ class BlogController extends Controller {
 	{
 		$posts 			= Blog::getPosts();
 		$tags 			= Blog::getTags();
-		$years			= HelpersMachaen::getYearsPost();
+		$years			= Helpers::getYearsPost();
 
 		return view('packages::index', [	'posts' 		=> $posts, 
 											'tags' 			=> $tags,
@@ -51,7 +51,7 @@ class BlogController extends Controller {
 		$tags 			= Blog::getTags();
 		$post_recent 	= Blog::getPostRecent(2);
 		$post_relation 	= Blog::getPostRecent(2);
-		$years			= HelpersMachaen::getYearsPost();
+		$years			= Helpers::getYearsPost();
 
 		if (!isset($post->titulo)){
 			abort('404');
