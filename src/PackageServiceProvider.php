@@ -17,6 +17,9 @@ class PackageServiceProvider extends ServiceProvider {
 		$this->publishes([ __DIR__.'/views' => base_path('resources/views/machaen/blog')]);
 		$this->publishes([ __DIR__.'/database/migrations' => base_path('database/migrations')]);
 		$this->publishes([ __DIR__.'/database/seeds' => base_path('database/seeds')]);
+		$this->publishes([ __DIR__.'/public/css' => base_path('public/css')]);
+		$this->publishes([ __DIR__.'/public/js' => base_path('public/js')]);
+		$this->publishes([ __DIR__.'/resources/assets/styl' => base_path('public/styl')]);
 	}
 
 	/**

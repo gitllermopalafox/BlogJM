@@ -7,11 +7,7 @@
         @if ($posts->count()==0)
           <h3 class="show-result">Resultados</h3>
         @else
-          @if(LaravelLocalization::getCurrentLocale() == "es")
-            <h3 class="show-result"> {{ $posts->total() }} RESULTADOS (PAGINA {{ $posts->currentPage() }} DE {{ $posts->lastPage() }}) </h3>
-          @else
-            <h3 class="show-result"> {{ $posts->total() }} RESULTS (PAGE {{ $posts->currentPage() }} OF {{ $posts->lastPage() }}) </h3>
-          @endif
+          <h3 class="show-result"> {{ $posts->total() }} RESULTADOS (PAGINA {{ $posts->currentPage() }} DE {{ $posts->lastPage() }}) </h3>
         @endif
           @foreach($posts as $post)
             <div class="item-info">
@@ -34,17 +30,9 @@
           @endforeach
 
           <div class="paginator">
-            {!! $posts->appends([ 
-                                  'search'  => app('request')->input('search') ,
+            {!! $posts->appends([ 'search'  => app('request')->input('search') ,
                                   'tag'     => app('request')->input('tag') 
                                 ])->render() !!}
-
-            <!--<a class="prev-page" href=""></a>
-            <a class="" href="#">1</a>
-            <a class="" href="#">2</a>
-            <a class="" href="#">3</a>
-            <a class="" href="#">...</a>
-            <a class="next-page" href=""></a>-->
           </div>
         </section>
         @include('packages::filtros', [ 'with_notes' => null, 'tags' => $tags, 'years' => $years ])
