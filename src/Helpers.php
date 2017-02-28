@@ -17,7 +17,7 @@ use Session;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
-class HelpersMachaen{
+class Helpers{
     
     
     public static function dateString($date)
