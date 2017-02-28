@@ -20,7 +20,7 @@ class PackageServiceProvider extends ServiceProvider {
 		$this->publishes([ __DIR__.'/public/css' => base_path('public/css')]);
 		$this->publishes([ __DIR__.'/public/js' => base_path('public/js')]);
 		$this->publishes([ __DIR__.'/public/styl' => base_path('resources/assets/styl')]);
-		$this->publishes([ __DIR__.'/public/images/blog' => base_path('public/images')]);
+		$this->publishes([ __DIR__.'/public/images/blog' => base_path('public/images/blog')]);
 	}
 
 	/**
