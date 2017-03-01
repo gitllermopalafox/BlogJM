@@ -64,15 +64,6 @@ class BlogSeeder extends Seeder {
             ));
         }
 
-        for($cont = 1; $cont <= 40; $cont++)
-        {
-            $faker = Faker::create();
-
-            DB::table('blog_has_tag')->insert(array(
-                'tag_id'   => $faker->numberBetween(1, 7),
-                'blog_id'  => $cont,
-            ));
-        }
 
         for($cont = 0; $cont <= 8; $cont++){
 
@@ -115,6 +106,16 @@ class BlogSeeder extends Seeder {
             ));
             
             $tag_id++;
+        }
+
+        for($cont = 1; $cont <= 40; $cont++)
+        {
+            $faker = Faker::create();
+
+            DB::table('blog_has_tag')->insert(array(
+                'tag_id'   => $faker->numberBetween(1, 7),
+                'blog_id'  => $cont,
+            ));
         }
     }
 }
