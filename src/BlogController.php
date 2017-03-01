@@ -38,7 +38,7 @@ class BlogController extends Controller {
 		$tags 			= Blog::getTags();
 		$years			= Helpers::getYearsPost();
 
-		return view('blog::index', [	'posts' 		=> $posts, 
+		return view('blog::index', ['posts' 		=> $posts, 
 											'tags' 			=> $tags,
 											'years'			=> $years 
 											]);

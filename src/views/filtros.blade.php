@@ -2,16 +2,16 @@
   <div class="search-container">
     <div>
       {!! Form::open(['route' => 'blog.index', 'method' => 'GET']) !!}
-        <input type="text" name="search" placeholder="Buscar..." value="{{ app('request')->input('search') }}">
+        <input type="text" name="search" placeholder="{{ trans('blog.search') }}" value="{{ app('request')->input('search') }}">
         <input type="submit" value="IR">
       {!! Form::close() !!}
     </div>
   </div>
   <div class="filter-explorer">
-    <h2>EXPLORAR</h2>
+    <h2>{{ trans('blog.explore') }}</h2>
     @foreach ($tags as $tag)
       <span class="tags-filter">
-        <a href="{{ URL::route('blog_index', [ 'tag' => $tag->slug ]) }}">
+        <a href="{{ URL::route('blog.index', [ 'tag' => $tag->slug ]) }}">
           {{ $tag->tag_name}}
         </a> 
       </span>
@@ -21,7 +21,7 @@
   @if ( !is_null($with_notes))
     @if (!is_null($post_recent)) 
       <div class="filter-notes">
-        <h2>RELACIONADOS</h2>
+        <h2>{{ trans('blog.related') }}</h2>
         @foreach($post_relation as $post)
           <a class="item-rel" href="{{ URL::route('blog.show', [ 'slug' => $post->slug ]) }}">
             <div class="cont-img-item">
@@ -34,7 +34,7 @@
     @endif
     @if (!is_null($post_recent))
       <div class="filter-notes">
-        <h2>RESIENTES</h2>
+        <h2>{{ trans('blog.recent') }}</h2>
         @foreach($post_recent as $post)
           <a class="item-rel" href="{{ URL::route('blog.show', [ 'slug' => $post->slug ]) }}">
             <div class="cont-img-item">
@@ -47,7 +47,7 @@
       @endif
   @endif
   <div class="filter-date">
-    <h2>FECHAS</h2>
+    <h2>{{ trans('blog.date') }}</h2>
     @foreach ($years as $year)
       <div class="panel-group">
         <div class="panel panel-default">

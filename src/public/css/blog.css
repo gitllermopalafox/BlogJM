@@ -181,6 +181,7 @@ a:hover {
   background: #fc3;
   display: inline-block;
   vertical-align: top;
+  float: none;
   padding: 0px;
 }
 .blog-container .blog-items .paginator .pagination li a.to-back,
@@ -214,6 +215,7 @@ a:hover {
 .blog-container .blog-items .paginator .pagination li.active span,
 .blog-container .preview-blog .paginator .pagination li.active span {
   border-radius: 0px;
+  float: none;
   height: 60px;
   min-width: 60px;
   background: transparent;
@@ -230,7 +232,7 @@ a:hover {
   overflow: hidden;
 }
 .blog-container .preview-blog h2 {
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 300;
   font-family: 'Source Sans Pro', sans-serif;
   margin-top: 15px;
@@ -297,8 +299,8 @@ a:hover {
 }
 .blog-container .blog-filters > div h2 {
   margin: 0px;
-  font-family: ''Source Sans Pro', sans-serif;';
-  font-size: 30px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 25px;
   height: 45px;
   display: inline-block;
   width: 100%;
@@ -352,7 +354,7 @@ a:hover {
 }
 .blog-container .blog-filters > div.filter-notes h2 {
   margin: 0px;
-  font-family: ''Source Sans Pro', sans-serif;';
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   font-weight: 300;
   height: 45px;

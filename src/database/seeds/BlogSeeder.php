@@ -13,7 +13,7 @@ class BlogSeeder extends Seeder {
 	 */
 	public function run()
     {
-        for($cont = 1; $cont <= 20; $cont++){
+        for($cont = 1; $cont <= 40; $cont++){
 
             $faker = Faker::create();
 
@@ -26,7 +26,7 @@ class BlogSeeder extends Seeder {
             ));
         }
 
-         for($cont = 1; $cont <= 20; $cont++){
+         for($cont = 1; $cont <= 40; $cont++){
 
             $faker = Faker::create();
 
@@ -45,7 +45,7 @@ class BlogSeeder extends Seeder {
             ));
         }
 
-        for($cont = 1; $cont <= 20; $cont++){
+        for($cont = 1; $cont <= 40; $cont++){
 
             $faker = Faker::create();
 
@@ -62,6 +62,59 @@ class BlogSeeder extends Seeder {
                                                             $timezone = date_default_timezone_get()
                                                         )
             ));
+        }
+
+        for($cont = 1; $cont <= 40; $cont++)
+        {
+            $faker = Faker::create();
+
+            DB::table('blog_has_tag')->insert(array(
+                'tag_id'   => $faker->numberBetween(1, 7),
+                'blog_id'  => $cont,
+            ));
+        }
+
+        for($cont = 0; $cont <= 8; $cont++){
+
+            $faker = Faker::create();
+                
+            DB::table('tag')->insert(array(
+                'created_at' => $faker->dateTimeBetween(   $startDate = '-9 month', 
+                                                            $endDate = 'now', 
+                                                            $timezone = date_default_timezone_get()
+                                                        )
+            ));
+        }
+
+        $array_tags = [ 'Ciudad', 
+                        'Playa', 
+                        'Pueblo', 
+                        'Tips', 
+                        'Eventos', 
+                        'Aventura', 
+                        'Negocios', 
+                        'Familia', 
+                        'Romance'
+                      ];
+        $tag_id = 1;
+        
+        for($cont = 0; $cont <= 8; $cont++)
+        {
+            DB::table('tag_translations')->insert(array(
+                'nombre'     => $array_tags[$cont],
+                'tag_id'     => $tag_id,
+                'slug'       => strtolower($array_tags[$cont]),
+                'locale'     => 'es'
+            ));
+
+            DB::table('tag_translations')->insert(array(
+                'nombre'     => $array_tags[$cont],
+                'tag_id'     => $tag_id,
+                'slug'       => strtolower($array_tags[$cont]),
+                'locale'     => 'en'
+            ));
+            
+            $tag_id++;
         }
     }
 }
