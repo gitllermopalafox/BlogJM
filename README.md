@@ -69,5 +69,5 @@ function(){
 ```
 6 - Finally you have to migrate and insert your seeds:
 ```php
-php artisan vendor:publish
+php artisan migrate:refresh --seed
 ```
