@@ -35,7 +35,7 @@
                                 ])->render() !!}
           </div>
         </section>
-        @include('packages::filtros', [ 'with_notes' => null, 'tags' => $tags, 'years' => $years ])
+        @include('blog::filtros', [ 'with_notes' => null, 'tags' => $tags, 'years' => $years ])
       </div>
     </div>
   </div>
