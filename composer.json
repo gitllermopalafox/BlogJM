@@ -17,6 +17,8 @@
         "fzaninotto/faker": "^1.5"
     },
     "autoload": {
-        "Machaen\\Blog\\": "src"
+        "psr-4": {
+            "Machaen\\Blog\\": "src"
+        }
     }
 }
