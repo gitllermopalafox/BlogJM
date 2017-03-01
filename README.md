@@ -67,7 +67,7 @@ function(){
     Route::get(LaravelLocalization::transRoute('blog.blog-show'),['as' => 'blog.show', 'uses' => '\Machaen\Blog\BlogController@show']);
 });
 ```
-6 - Finally you have to migrate and insert your seeds:
+7 - Finally you have to migrate and insert your seeds:
 ```php
 	php artisan migrate:refresh --seed
 ```
