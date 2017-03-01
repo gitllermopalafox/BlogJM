@@ -1,4 +1,4 @@
-@extends('app', ['route_blog' => Helpers::getRouteBlog($post->id)])
+@extends('app', ['route_blog' => \Machaen\Blog\Helpers::getRouteBlog($post->id)])
 
 @section('content')
   <div class="container">
