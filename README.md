@@ -81,7 +81,7 @@ It's necessary configure a button that's allow change our locale and set the len
 	/*----------  PREVIEW BLOG POST  ----------*/
 	
 	/* This line call the function "getRouteBlog" that's create a link with the parameters necessary for translate the current route. Here we past the route at layout our project */
-	@extends('layout', ['route_blog' => \Machaen\Blog\Helpers::getRouteBlog($post->id)])
+	@extends('app', ['route_blog' => \Machaen\Blog\Helpers::getRouteBlog($post->id)])
 
 	/*----------  LAYOUT  ----------*/
 	
