@@ -40,7 +40,7 @@ php artisan vendor:publish
     <script src="{{ asset('js/blog.js') }}"></script>  
 </head>
 ```
-5 - Add middlewarest to `app/Http/kernel.php`:
+5 - Add middlewares to `app/Http/kernel.php`:
 ```php
 ...
 protected $routeMiddleware = [
