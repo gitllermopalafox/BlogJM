@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "5.*",
+        "php": "^5.0",
         "dimsav/laravel-translatable" : "5.4",
         "mcamara/laravel-localization": "1.1.*",
         "illuminate/html": "5.*",
